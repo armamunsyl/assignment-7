@@ -1,18 +1,26 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { Suspense } from 'react'
 import './App.css'
 import Navbar from './component/Navbar'
 import Cardfirst from './component/card/Cardfirst'
+import SupportCard from './component/support-card/SupportCard'
+
+
+const fetchUsers = async () => {
+  const res = await fetch("/customer.json")
+  return res.json()
+}
 
 
 function App() {
-  const [count, setCount] = useState(0)
 
+ const UserProm = fetchUsers()
   return (
     <>
       <Navbar></Navbar>
       <Cardfirst></Cardfirst>
+      <Suspense>
+        <SupportCard UserProm={UserProm}></SupportCard>
+      </Suspense>
     </>
   )
 }
