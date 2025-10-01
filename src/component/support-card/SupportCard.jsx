@@ -28,7 +28,11 @@ const SupportCard = ({ UserProm }) => {
               </div>
               <p className="text-sm text-gray-600">{user.description}</p>
               <div className="flex justify-between text-xs text-gray-500 mt-2">
-                <span>{user.id} {user.priority}</span>
+               <div className='flex gap-2'> 
+                 <h1>{user.id} </h1>
+                <span className={`font-semibold ${user.priority === "HIGH PRIORITY" ? "text-red-500" : user.priority === "MEDIUM PRIORITY" ? "text-yellow-500" : "text-green-600"}`}>{user.priority}</span>
+               
+               </div>
                 <span>{user.customer} {user.createdAt}</span>
               </div>
             </div>
