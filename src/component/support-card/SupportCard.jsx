@@ -4,14 +4,16 @@ const SupportCard = ({ UserProm }) => {
   const userData = use(UserProm)
   const [selectedTask, taskSelected] = useState([])
   const [resolvedTask, setResolvedTask] = useState([]);
-  
-  console.log(resolvedTask)
+
+  console.log(selectedTask)
 
   const taskSelect = (userdata) => {
     taskSelected([...selectedTask, userdata])
   }
   const foundTitle = (tasktitle) => {
-        setResolvedTask([...resolvedTask, tasktitle])
+    setResolvedTask([...resolvedTask, tasktitle])
+    taskSelected(selectedTask.filter(usy => usy.id !== tasktitle.id));
+    console.log(selectedTask)
   }
   return (
     <div className="grid grid-cols-3 gap-6 max-w-7xl mx-auto mt-6">
@@ -33,11 +35,11 @@ const SupportCard = ({ UserProm }) => {
               </div>
               <p className="text-sm text-gray-600">{user.description}</p>
               <div className="flex justify-between text-xs text-gray-500 mt-2">
-               <div className='flex gap-2'> 
-                 <h1>{user.id} </h1>
-                <span className={`font-semibold ${user.priority === "HIGH PRIORITY" ? "text-red-500" : user.priority === "MEDIUM PRIORITY" ? "text-yellow-500" : "text-green-600"}`}>{user.priority}</span>
-               
-               </div>
+                <div className='flex gap-2'>
+                  <h1>{user.id} </h1>
+                  <span className={`font-semibold ${user.priority === "HIGH PRIORITY" ? "text-red-500" : user.priority === "MEDIUM PRIORITY" ? "text-yellow-500" : "text-green-600"}`}>{user.priority}</span>
+
+                </div>
                 <span>{user.customer} {user.createdAt}</span>
               </div>
             </div>
@@ -54,15 +56,27 @@ const SupportCard = ({ UserProm }) => {
               className="bg-white rounded-lg shadow p-4 mb-3"
             >
               <h3 className="font-medium mb-2">{task.title}</h3>
-              <button onClick={() => foundTitle(task.title)} className="w-full bg-green-500 hover:bg-green-600 text-white font-medium py-2 px-4 rounded">
+              <button onClick={() => foundTitle(task)} className="w-full bg-green-500 hover:bg-green-600 text-white font-medium py-2 px-4 rounded">
                 Complete
               </button>
             </div>
           ))
         )}
 
-        <h2 className="text-lg font-semibold mt-6 mb-2">Resolved Task</h2>
-        <p className="text-gray-500">No resolved tasks yet.</p>
+        <div className="mt-6">
+          <h2 className="text-lg font-semibold mb-4">Resolved Task</h2>
+          {resolvedTask.length === 0 ? (
+            <p className="text-gray-500">No resolved tasks yet.</p>
+          ) : (
+            resolvedTask.map((title) => (
+              <div
+                className="bg-blue-100 text-gray-800 px-4 py-2 rounded mb-2"
+              >
+                {title.title}
+              </div>
+            ))
+          )}
+        </div>
       </div>
 
     </div>
