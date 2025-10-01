@@ -4,7 +4,7 @@
     "title": "Login Issues - Can't Access Account",
     "description": "User cannot log in after multiple attempts; password reset not working.",
     "customer": "John Smith",
-    "priority": "HIGH",
+    "priority": "HIGH PRIORITY",
     "status": "Open",
     "createdAt": "2024-01-15"
   },
@@ -13,8 +13,8 @@
     "title": "Unable to Download Invoice",
     "description": "January invoice download fails with network error on billing page.",
     "customer": "Michael Brown",
-    "priority": "MEDIUM",
-    "status": "In-Progress",
+    "priority": "MEDIUM PRIORITY",
+    "status": "Open",
     "createdAt": "2024-01-17"
   },
   {
@@ -22,7 +22,7 @@
     "title": "App Crash on Launch",
     "description": "Mobile app crashes instantly on Android 13 after splash screen.",
     "customer": "David Wilson",
-    "priority": "HIGH",
+    "priority": "HIGH PRIORITY",
     "status": "Open",
     "createdAt": "2024-01-19"
   },
@@ -31,7 +31,7 @@
     "title": "Payment Method Not Saving",
     "description": "New credit card can’t be saved to profile; 422 validation error.",
     "customer": "Sarah Lee",
-    "priority": "MEDIUM",
+    "priority": "MEDIUM PRIORITY",
     "status": "In-Progress",
     "createdAt": "2024-02-03"
   },
@@ -40,7 +40,7 @@
     "title": "Email Notifications Delayed",
     "description": "Support updates arrive 3–4 hours late for some users.",
     "customer": "Ayesha Rahman",
-    "priority": "LOW",
+    "priority": "LOW PRIORITY",
     "status": "Open",
     "createdAt": "2024-02-06"
   },
@@ -49,7 +49,7 @@
     "title": "2FA Code Not Received",
     "description": "SMS OTP not delivered to Grameenphone numbers during peak hours.",
     "customer": "Tanvir Ahmed",
-    "priority": "HIGH",
+    "priority": "HIGH PRIORITY",
     "status": "In-Progress",
     "createdAt": "2024-02-10"
   },
@@ -58,8 +58,8 @@
     "title": "Profile Avatar Upload Fails",
     "description": "PNG uploads above 1 MB return 500 from media service.",
     "customer": "Emily Carter",
-    "priority": "LOW",
-    "status": "Open",
+    "priority": "LOW PRIORITY",
+    "status": "In-Progress",
     "createdAt": "2024-02-14"
   },
   {
@@ -67,7 +67,7 @@
     "title": "Search Results Inaccurate",
     "description": "Keyword search ignores filters for date range and status.",
     "customer": "Noah Peterson",
-    "priority": "MEDIUM",
+    "priority": "MEDIUM PRIORITY",
     "status": "In-Progress",
     "createdAt": "2024-02-18"
   },
@@ -76,7 +76,7 @@
     "title": "Webhook Retries Exceeded",
     "description": "Order.created webhook times out; partner endpoint returns 504.",
     "customer": "TechMart Ltd.",
-    "priority": "HIGH",
+    "priority": "HIGH PRIORITY",
     "status": "Open",
     "createdAt": "2024-02-20"
   },
@@ -85,7 +85,7 @@
     "title": "Dark Mode Contrast Issue",
     "description": "Text in buttons too dim when system theme is dark.",
     "customer": "Priya Sharma",
-    "priority": "LOW",
+    "priority": "LOW PRIORITY",
     "status": "In-Progress",
     "createdAt": "2024-02-22"
   }
