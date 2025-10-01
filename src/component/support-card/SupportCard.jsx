@@ -1,11 +1,9 @@
 import React, { use, useState } from 'react'
 
-const SupportCard = ({ UserProm }) => {
+const SupportCard = ({ UserProm, selectedTask, taskSelected, resolvedTask , setResolvedTask }) => {
   const userData = use(UserProm)
-  const [selectedTask, taskSelected] = useState([])
-  const [resolvedTask, setResolvedTask] = useState([]);
 
-  console.log(selectedTask)
+  console.log(resolvedTask)
 
   const taskSelect = (userdata) => {
     taskSelected([...selectedTask, userdata])
@@ -13,7 +11,7 @@ const SupportCard = ({ UserProm }) => {
   const foundTitle = (tasktitle) => {
     setResolvedTask([...resolvedTask, tasktitle])
     taskSelected(selectedTask.filter(usy => usy.id !== tasktitle.id));
-    console.log(selectedTask)
+    // console.log(selectedTask)
   }
   return (
     <div className="grid grid-cols-3 gap-6 max-w-7xl mx-auto mt-6">
