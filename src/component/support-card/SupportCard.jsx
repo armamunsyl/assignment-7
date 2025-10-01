@@ -3,10 +3,15 @@ import React, { use, useState } from 'react'
 const SupportCard = ({ UserProm }) => {
   const userData = use(UserProm)
   const [selectedTask, taskSelected] = useState([])
-  console.log(selectedTask)
+  const [resolvedTask, setResolvedTask] = useState([]);
+  
+  console.log(resolvedTask)
 
   const taskSelect = (userdata) => {
     taskSelected([...selectedTask, userdata])
+  }
+  const foundTitle = (tasktitle) => {
+        setResolvedTask([...resolvedTask, tasktitle])
   }
   return (
     <div className="grid grid-cols-3 gap-6 max-w-7xl mx-auto mt-6">
@@ -49,7 +54,7 @@ const SupportCard = ({ UserProm }) => {
               className="bg-white rounded-lg shadow p-4 mb-3"
             >
               <h3 className="font-medium mb-2">{task.title}</h3>
-              <button className="w-full bg-green-500 hover:bg-green-600 text-white font-medium py-2 px-4 rounded">
+              <button onClick={() => foundTitle(task.title)} className="w-full bg-green-500 hover:bg-green-600 text-white font-medium py-2 px-4 rounded">
                 Complete
               </button>
             </div>
