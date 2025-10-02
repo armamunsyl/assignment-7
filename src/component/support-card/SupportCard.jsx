@@ -1,4 +1,5 @@
 import React, { use, useState } from 'react'
+import { toast } from 'react-toastify'
 
 const SupportCard = ({ UserProm, selectedTask, taskSelected, resolvedTask , setResolvedTask }) => {
   const userData = use(UserProm)
@@ -7,14 +8,16 @@ const SupportCard = ({ UserProm, selectedTask, taskSelected, resolvedTask , setR
 
   const taskSelect = (userdata) => {
     taskSelected([...selectedTask, userdata])
+    toast("In Progress!")
   }
   const foundTitle = (tasktitle) => {
     setResolvedTask([...resolvedTask, tasktitle])
+    toast("Complete")
     taskSelected(selectedTask.filter(usy => usy.id !== tasktitle.id));
     // console.log(selectedTask)
   }
   return (
-    <div className="grid grid-cols-3 gap-6 max-w-7xl mx-auto mt-6">
+    <div className="grid grid-cols-2 md:grid-cols-3 gap-6 max-w-7xl mx-auto mt-6">
       <div className="col-span-2">
         <h2 className="text-lg font-semibold mb-4">Customer Tickets</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
