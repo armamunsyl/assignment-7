@@ -4,6 +4,7 @@ import Navbar from './component/Navbar'
 import Cardfirst from './component/card/Cardfirst'
 import SupportCard from './component/support-card/SupportCard'
 import { ToastContainer,} from 'react-toastify';
+import FooterPart from './component/footer/FooterPart'
 
 
 const fetchUsers = async () => {
@@ -23,8 +24,11 @@ function App() {
       <Cardfirst selectedTask={selectedTask} resolvedTask={resolvedTask}></Cardfirst>
       <Suspense>
         <SupportCard UserProm={UserProm} selectedTask={selectedTask} taskSelected={taskSelected} resolvedTask={resolvedTask} setResolvedTask={setResolvedTask}></SupportCard>
+      <FooterPart></FooterPart>
       </Suspense>
+      
       <ToastContainer/>
+      
     </>
   )
 }
