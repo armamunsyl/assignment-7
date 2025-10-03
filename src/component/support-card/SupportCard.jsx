@@ -1,12 +1,17 @@
 import React, { use, useState } from 'react'
 import { toast } from 'react-toastify'
 
-const SupportCard = ({ UserProm, selectedTask, taskSelected, resolvedTask , setResolvedTask }) => {
+const SupportCard = ({ UserProm, selectedTask, taskSelected, resolvedTask, setResolvedTask }) => {
   const userData = use(UserProm)
 
-  console.log(resolvedTask)
+  const [tickets, setTickets] = useState(userData);
 
   const taskSelect = (userdata) => {
+    const alreadyAdded = selectedTask.some(task => task.id === userdata.id);
+    if (alreadyAdded) {
+      toast("This problem is already in Progress")
+      return;
+    }
     taskSelected([...selectedTask, userdata])
     toast("In Progress!")
   }
@@ -14,6 +19,8 @@ const SupportCard = ({ UserProm, selectedTask, taskSelected, resolvedTask , setR
     setResolvedTask([...resolvedTask, tasktitle])
     toast("Complete")
     taskSelected(selectedTask.filter(usy => usy.id !== tasktitle.id));
+    const updatedTickets = tickets.filter(t => t !== tasktitle);
+    setTickets(updatedTickets);
     // console.log(selectedTask)
   }
   return (
@@ -21,7 +28,7 @@ const SupportCard = ({ UserProm, selectedTask, taskSelected, resolvedTask , setR
       <div className="col-span-2">
         <h2 className="text-lg font-semibold mb-4">Customer Tickets</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {userData.map(user => (
+          {tickets.map(user => (
             <div
               key={user.id}
               onClick={() => taskSelect(user)}
