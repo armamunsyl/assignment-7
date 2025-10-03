@@ -24,10 +24,10 @@ const SupportCard = ({ UserProm, selectedTask, taskSelected, resolvedTask, setRe
     // console.log(selectedTask)
   }
   return (
-    <div className="grid grid-cols-2 md:grid-cols-3 gap-6 max-w-7xl mx-auto mt-6">
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto mt-6">
       <div className="col-span-2">
-        <h2 className="text-lg font-semibold mb-4">Customer Tickets</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <h2 className="text-lg font-semibold mb-4 px-3 mx-6 md:mx-0">Customer Tickets</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-4 mx-5 md:mx-0">
           {tickets.map(user => (
             <div
               key={user.id}
@@ -54,7 +54,7 @@ const SupportCard = ({ UserProm, selectedTask, taskSelected, resolvedTask, setRe
           ))}
         </div>
       </div>
-      <div className="col-span-1">
+      <div className="col-span-1 p-5 md:p-0">
         <h2 className="text-lg font-semibold mb-4">Task Status</h2>
         {selectedTask.length === 0 ? (
           <p className="text-gray-500">Select a ticket to add to Task Status</p>
