@@ -1,5 +1,7 @@
 import React, { use, useState } from 'react'
 import { toast } from 'react-toastify'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCircle } from "@fortawesome/free-solid-svg-icons";
 
 const SupportCard = ({ UserProm, selectedTask, taskSelected, resolvedTask, setResolvedTask }) => {
   const userData = use(UserProm)
@@ -35,8 +37,16 @@ const SupportCard = ({ UserProm, selectedTask, taskSelected, resolvedTask, setRe
             >
               <div className="flex justify-between items-center mb-2">
                 <h2 className="font-semibold">{user.title}</h2>
+
                 <span className={`px-2 py-1 rounded text-xs ${user.status === "Open" ? "bg-green-100 text-green-700" : "bg-yellow-100 text-yellow-700"
                   }`}>
+                  <FontAwesomeIcon
+                    icon={faCircle}
+                    className={`text-[8px] mr-2 ${user.status === "Open"
+                        ? "text-green-600"
+                        :"text-yellow-500"
+                      }`}
+                  />
                   {user.status}
                 </span>
               </div>
@@ -80,6 +90,7 @@ const SupportCard = ({ UserProm, selectedTask, taskSelected, resolvedTask, setRe
                 className="bg-blue-100 text-gray-800 px-4 py-2 rounded mb-2"
               >
                 {title.title}
+                <h1 className='text-green-700'>✅ Completed</h1>
               </div>
             ))
           )}
