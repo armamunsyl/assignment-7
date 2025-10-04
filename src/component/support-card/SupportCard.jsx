@@ -2,6 +2,7 @@ import React, { use, useState } from 'react'
 import { toast } from 'react-toastify'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircle } from "@fortawesome/free-solid-svg-icons";
+import { faCalendarAlt } from "@fortawesome/free-solid-svg-icons";
 
 const SupportCard = ({ UserProm, selectedTask, taskSelected, resolvedTask, setResolvedTask }) => {
   const userData = use(UserProm)
@@ -57,7 +58,7 @@ const SupportCard = ({ UserProm, selectedTask, taskSelected, resolvedTask, setRe
                   <span className={`font-semibold ${user.priority === "HIGH PRIORITY" ? "text-red-500" : user.priority === "MEDIUM PRIORITY" ? "text-yellow-500" : "text-green-600"}`}>{user.priority}</span>
 
                 </div>
-                <span>{user.customer} {user.createdAt}</span>
+                <span>{user.customer} <FontAwesomeIcon icon={faCalendarAlt} className="text-gray-500" /> {user.createdAt}</span>
               </div>
             </div>
           ))}
