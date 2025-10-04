@@ -9,7 +9,6 @@ const SupportCard = ({ UserProm, selectedTask, taskSelected, resolvedTask, setRe
   const taskSelect = (userdata) => {
     const alreadyAdded = selectedTask.some(task => task.id === userdata.id);
     if (alreadyAdded) {
-      toast("This problem is already in Progress")
       return;
     }
     taskSelected([...selectedTask, userdata])

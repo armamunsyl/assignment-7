@@ -1,16 +1,15 @@
-# React + Vite
+1. What is JSX, and why is it used?
+   JSX stands for JavaScript XML. It allows us to write HTML code inside JavaScript. It makes the code easy to read and write. React uses JSX to describe what the UI should look like.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+2. What is the difference between State and Props?
+   State is data that belongs to a component and can change over time.
+   Props are data passed from one component to another (usually parent to child) and cannot be changed by the child component.
 
-Currently, two official plugins are available:
+3. What is the useState hook, and how does it work?
+   useState is a special React Hook used to add and manage state in a functional component. It returns a value and a function to update that value when needed.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+4. How can you share state between components in React?
+   To share state, we can move the state up to a common parent component and pass it down as props. Another way is by using tools like Context API or Redux.
 
-## React Compiler
-
-The React Compiler is not enabled on this template. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+5. How is event handling done in React?
+   Event handling in React is done using camelCase syntax, like onClick or onChange. We pass a function that runs when the event happens. Example: a button click calls a function when pressed.
